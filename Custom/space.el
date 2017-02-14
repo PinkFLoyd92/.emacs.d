@@ -1,4 +1,7 @@
 (use-package avy :ensure t)
+(use-package which-key :ensure t
+  :config
+  (which-key-mode 1))
 (use-package evil :ensure t
   :config
   (evil-mode 1)
@@ -18,16 +21,15 @@
    :prefix "SPC"
    :non-normal-prefix "C-SPC"
 
-    "/"   'counsel-ag
     "TAB" '(switch-to-prev-buffer :which-key "Previous Buffer")
     "<backtab>" '(switch-to-next-buffer :which-key "Next Buffer")
     "SPC" '(avy-goto-word-or-subword-1  :which-key "Find Character")
     "a" '(:ignore t :which-key "Applications")
-    "ar" 'ranger
-    "ad" 'dired
-    "x" 'helm-M-x
-    "ff" 'helm-find-files
-    "hdf" 'describe-function
+    "ar" '(ranger :which-key "Ranger")
+    "ad" '(dired :which-key "Dired")
+    "x" '(helm-M-x :which-key "Helm M-x")
+    "ff" '(helm-find-files :which-key "Find files")
+    "hdf" '(describe-function :which-key "Describe Function")
     "hdk" 'describe-key
     "hdm" 'describe-mode
     "hdv" 'describe-variable

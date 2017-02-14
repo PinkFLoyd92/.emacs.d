@@ -21,12 +21,27 @@
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
 (setq initial-scratch-message "Welcome in Emacs") ; print a default message in the empty scratch buffer opened at startup
+(setq custom-safe-themes t)
 
 (require 'package)
 (require 'use-package)
 
-
 (load-file "~/.emacs.d/Custom/space.el")
 (load-file "~/.emacs.d/Custom/setup.el")
+(load-file "~/.emacs.d/Custom/evil.el")
+(load-file "~/.emacs.d/Custom/projectile.el")
 
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

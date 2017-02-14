@@ -45,5 +45,7 @@
 (depends-on "meta-presenter")
 (depends-on "myterminal-controls")
 (depends-on "theme-looper")
+(depends-on "which-key")
+(depends-on "helm-projectile")
 
 
