@@ -3,3 +3,5 @@ backups
 auto-save-list
 .cask/
 *~
+projectile.cache
+projectile.bookmarks.eld

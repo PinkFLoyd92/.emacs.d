@@ -47,5 +47,8 @@
 (depends-on "theme-looper")
 (depends-on "which-key")
 (depends-on "helm-projectile")
-
+(depends-on "php-mode")
+(depends-on "ace-window")
+(depends-on "flyspell")
+(depends-on "evil-smartparens")
 

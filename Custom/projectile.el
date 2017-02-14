@@ -12,7 +12,7 @@
    :states '(normal visual insert emacs)
    :prefix "SPC"
    :non-normal-prefix "C-SPC"
-    "pI"   '(helm-projectile-invalidate-cache :which-key "Invalidate Cache")
+    "pI"   '(projectile-invalidate-cache :which-key "Invalidate Cache")
     "pp"   '(helm-projectile-switch-project :which-key "Switch Project")
     "pf"   '(helm-projectile-find-file :which-key "Find file in Project")
  ))

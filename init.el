@@ -26,10 +26,15 @@
 (require 'package)
 (require 'use-package)
 
+(load-file "~/.emacs.d/Custom/elisp.el")
+(load-file "~/.emacs.d/Custom/automode.el")
+(load-file "~/.emacs.d/Custom/parens.el")
+(load-file "~/.emacs.d/Custom/remap.el")
 (load-file "~/.emacs.d/Custom/space.el")
 (load-file "~/.emacs.d/Custom/setup.el")
 (load-file "~/.emacs.d/Custom/evil.el")
 (load-file "~/.emacs.d/Custom/projectile.el")
+(load-file "~/.emacs.d/Custom/flycheck.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -38,7 +43,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default))))
+    ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
+ '(package-selected-packages
+   (quote
+    (yasnippet which-key web-mode use-package theme-looper switch-window smex smartparens ranger prodigy powerline popwin php-mode pallet nyan-mode neotree myterminal-controls multiple-cursors meta-presenter material-theme magit idle-highlight-mode htmlize helm-projectile general flycheck-cask expand-region exec-path-from-shell evil drag-stuff dired-launch counsel company buffer-move auto-complete ace-window ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
