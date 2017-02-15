@@ -32,8 +32,17 @@
     "wX" '(delete-other-windows :which-key "Delete other windows")
     "wwx" '(delete-frame :which-key "Delete current frame")
     "wwX" '(delete-other-frames :which-key "Delete other frames")
+;;    "h" '(shrink-window-horizontally :which-key "Shrink window horizontally")
+    "j" '(shrink-window :which-key "Shrink window vertically")
+    "k" '(enlarge-window :which-key "Enlarge window vertically")
+    "l" '(enlarge-window-horizontally :which-key "Enlarge window vertically")
     ))
 
+
+  (general-define-key
+   :states '(normal visual emacs)
+    "/" '(swiper :which-key "Search string in buffer...")
+    )
 
 
 (defun evil-sp--add-bindings ()

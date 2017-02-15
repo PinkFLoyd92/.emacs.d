@@ -51,4 +51,8 @@
 (depends-on "ace-window")
 (depends-on "flyspell")
 (depends-on "evil-smartparens")
+(depends-on "ac-php")
+(depends-on "company-php")
+(depends-on "emmet-mode")
+(depends-on "vim-empty-lines-mode")
 

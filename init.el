@@ -22,10 +22,12 @@
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
 (setq initial-scratch-message "Welcome in Emacs") ; print a default message in the empty scratch buffer opened at startup
 (setq custom-safe-themes t)
+(global-vim-empty-lines-mode)
 
 (require 'package)
 (require 'use-package)
 
+(load-file "~/.emacs.d/Custom/whitespaces.el")
 (load-file "~/.emacs.d/Custom/elisp.el")
 (load-file "~/.emacs.d/Custom/automode.el")
 (load-file "~/.emacs.d/Custom/parens.el")
@@ -35,6 +37,8 @@
 (load-file "~/.emacs.d/Custom/evil.el")
 (load-file "~/.emacs.d/Custom/projectile.el")
 (load-file "~/.emacs.d/Custom/flycheck.el")
+(load-file "~/.emacs.d/Custom/php.el")
+(load-file "~/.emacs.d/Custom/webmode.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

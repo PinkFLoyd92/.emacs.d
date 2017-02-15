@@ -8,8 +8,8 @@
   )
 (general-define-key
  ;; replace default keybindings
- "C-s" 'swiper             ; search for string in current buffer
- "M-x" 'counsel-M-x        ; replace default M-x with ivy backend
+ "C-s" '(swiper :which-key "Search for string in buffer")
+ "M-x" '(helm-M-x :which-key "Helm-M-x")       ; replace default M-x with ivy backend
  )
 
 (use-package general :ensure t

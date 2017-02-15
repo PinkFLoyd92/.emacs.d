@@ -1,1 +1,0 @@
-("~/Projects/Php-Vulnerable/" "~/.emacs.d/" "~/.tmp.emacs.d/" "~/Projects/")
