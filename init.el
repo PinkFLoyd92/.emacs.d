@@ -23,11 +23,18 @@
 (setq initial-scratch-message "Welcome in Emacs") ; print a default message in the empty scratch buffer opened at startup
 (setq custom-safe-themes t)
 (global-vim-empty-lines-mode)
+(setq browse-url-browser-function 'eww-browse-url)
+(set-face-attribute 'default nil :font "Monaco-10")
+
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'package)
 (require 'use-package)
 
+(load-file "~/.emacs.d/Custom/markdown.el")
+(load-file "~/.emacs.d/Custom/resize.el")
 (load-file "~/.emacs.d/Custom/whitespaces.el")
+(load-file "~/.emacs.d/Custom/winner.el")
 (load-file "~/.emacs.d/Custom/elisp.el")
 (load-file "~/.emacs.d/Custom/automode.el")
 (load-file "~/.emacs.d/Custom/parens.el")
@@ -39,6 +46,9 @@
 (load-file "~/.emacs.d/Custom/flycheck.el")
 (load-file "~/.emacs.d/Custom/php.el")
 (load-file "~/.emacs.d/Custom/webmode.el")
+(load-file "~/.emacs.d/Custom/magit.el")
+(load-file "~/.emacs.d/Custom/latex.el")
+(load-file "~/.emacs.d/Custom/js.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

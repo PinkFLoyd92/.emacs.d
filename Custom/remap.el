@@ -2,9 +2,10 @@
 (global-set-key (kbd "M-1") 'windmove-up)
 (global-set-key (kbd "M-2") 'windmove-down)
 (global-set-key (kbd "M-3") 'windmove-right)
+(global-set-key (kbd "M-4") 'windmove-left)
 (global-set-key (kbd "C-k") 'previous-line)
 (global-set-key (kbd "C-j") 'next-line)
 ;; search with google
-(global-set-key (kbd "C-c g") 'google)
+(global-set-key (kbd "C-c g") 'helm-google-suggest)
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
 (global-set-key (kbd "<f11>") 'whitespace-mode)

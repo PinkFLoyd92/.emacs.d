@@ -1,3 +1,16 @@
 (require 'flyspell)
-(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
+(defun load-ielm ()
+  (interactive)
+  (let ((window(ielm)))
+    (require 'ace-window)
+    (switch-to-buffer-other-window window)
+    (ace-swap-window)
+    )
+  )
+
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode) 
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+
+(add-hook 'emacs-lisp-mode-hook (lambda ()
+(local-set-key (kbd "C-x c") 'load-ielm)
+				  ))

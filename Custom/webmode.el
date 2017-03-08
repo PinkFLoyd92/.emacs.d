@@ -5,6 +5,10 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-enable-auto-pairing t)
+(setq web-mode-style-padding 1)
+(setq web-mode-block-padding 1)
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)
 (setq web-mode-ac-sources-alist
   '(("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
     ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
