@@ -9,3 +9,5 @@
 (global-set-key (kbd "C-c g") 'helm-google-suggest)
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
 (global-set-key (kbd "<f11>") 'whitespace-mode)
+(local-set-key (kbd "M-n")  'elpy-nav-move-line-or-region-down)
+(local-set-key (kbd "M-m")  'elpy-nav-move-line-or-region-up)

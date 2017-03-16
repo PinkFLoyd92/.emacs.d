@@ -1,9 +1,6 @@
 (require 'auto-complete)
 (require 'nodejs-repl)
 (require 'flycheck)
-; do default config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
 ;; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -12,8 +9,14 @@
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-hook 'js2-mode-hook 'js2-minor-mode)
 
-(add-hook 'js-mode-hook (lambda () (tern-mode t)
-			  ))
+(add-hook 'js-mode-hook (lambda ()
+			  (tern-mode)
+; do default config for auto-complete
+(require 'auto-complete-config)
+(hs-minor-mode 1)
+(ac-config-default)))
+
+
 ;; customizable...
 
 (if (eq system-type 'windows-nt)

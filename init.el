@@ -20,7 +20,10 @@
 (setq coding-system-for-write 'utf-8 )
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
-(setq initial-scratch-message "Welcome in Emacs") ; print a default message in the empty scratch buffer opened at startup
+(require 'bookmark)
+
+(bookmark-bmenu-list)
+(switch-to-buffer "*Bookmark List*")
 (setq custom-safe-themes t)
 (global-vim-empty-lines-mode)
 (setq browse-url-browser-function 'eww-browse-url)
@@ -49,6 +52,9 @@
 (load-file "~/.emacs.d/Custom/magit.el")
 (load-file "~/.emacs.d/Custom/latex.el")
 (load-file "~/.emacs.d/Custom/js.el")
+(load-file "~/.emacs.d/Custom/python.el")
+(load-file "~/.emacs.d/Custom/matchit.el")
+(load-file "~/.emacs.d/Custom/folding.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

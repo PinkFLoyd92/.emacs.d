@@ -69,4 +69,6 @@
 (depends-on "popup")
 (depends-on "ac-js2")
 (depends-on "markdown-mode")
+(depends-on "elpy")
+(depends-on "evil-matchit")
 

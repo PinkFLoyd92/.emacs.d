@@ -5,7 +5,6 @@
   :config
 (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   (smartparens-global-mode 1)
-  (smartparens-global-strict-mode)
   )
 
 (use-package evil-paredit :ensure t
