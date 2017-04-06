@@ -19,7 +19,10 @@
 (setq coding-system-for-read 'utf-8 )	; use utf-8 by default
 (setq coding-system-for-write 'utf-8 )
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
-(setq default-fill-column 80)		; toggle wrapping text at the 80th character
+(setq default-fill-column 60)		; toggle wrapping text at the 80th character
+(mouse-avoidance-mode)
+(mouse-avoidance-banish)
+(auto-compression-mode 1)
 (require 'bookmark)
 
 (bookmark-bmenu-list)
@@ -28,7 +31,6 @@
 (global-vim-empty-lines-mode)
 (setq browse-url-browser-function 'eww-browse-url)
 (set-face-attribute 'default nil :font "Monaco-10")
-
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'package)
@@ -55,6 +57,9 @@
 (load-file "~/.emacs.d/Custom/python.el")
 (load-file "~/.emacs.d/Custom/matchit.el")
 (load-file "~/.emacs.d/Custom/folding.el")
+(load-file "~/.emacs.d/Custom/bookmark.el")
+(load-file "~/.emacs.d/Custom/navigation.el")
+(load-file "~/.emacs.d/Custom/yas.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

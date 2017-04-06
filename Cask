@@ -71,4 +71,6 @@
 (depends-on "markdown-mode")
 (depends-on "elpy")
 (depends-on "evil-matchit")
+(depends-on "ess")
+(depends-on "ng2-mode")
 

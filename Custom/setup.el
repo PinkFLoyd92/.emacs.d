@@ -72,3 +72,9 @@
    "hrt" '(theme-looper-enable-next-theme :which-key "Enable next theme")
    "qR" '(reload-init-file :which-key "Reload Emacs Configuration")
 	   ))
+
+(use-package general :ensure t
+  :config
+(general-define-key
+ "C-x b" '(ibuffer :which-key "Ibuffer"))
+  )

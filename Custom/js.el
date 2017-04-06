@@ -14,6 +14,7 @@
 ; do default config for auto-complete
 (require 'auto-complete-config)
 (hs-minor-mode 1)
+(company-mode 0)
 (ac-config-default)))
 
 

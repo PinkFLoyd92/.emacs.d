@@ -17,3 +17,13 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 | M-4        | windmove-left                  
 | F12        | toggle-menu-bar-mode           
 | SPC-r      | resize-window                  
+| SPC-vb      | point-to-register
+| SPC-vv      | resize-window                  
+
+
+#### AUTO-COMPLETE COMMANDS
+
+| key         | command                      
+| -----------:| --------------------------
+| SPC-vb      | ac-next                      
+| SPC-vv      | ac-previous                  

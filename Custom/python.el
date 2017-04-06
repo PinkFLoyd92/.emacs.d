@@ -5,7 +5,7 @@
 			      (hs-minor-mode 1)
 			      (setenv "PYTHONIOENCODING" "utf-8")
 			      (setenv "LANG" "en_US.UTF-8")
-			      (company-mode 0)
+			      (company-mode -1)
 			      (auto-complete-mode 1)
 			      (use-package general :ensure t
 				:config
