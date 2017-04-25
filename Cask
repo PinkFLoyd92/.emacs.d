@@ -73,4 +73,5 @@
 (depends-on "evil-matchit")
 (depends-on "ess")
 (depends-on "ng2-mode")
+(depends-on "pug-mode")
 

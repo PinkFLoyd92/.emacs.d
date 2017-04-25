@@ -41,9 +41,9 @@
 
 (defun toggle-web-mode ()
   "Doc."
-  (if (bound-and-true-p js2-mode)
-      (activate_web)
-    (activate_js))
+  (if (bound-and-true-p web-mode)
+      (activate_js)
+    (activate_web))
   )
 (use-package general
   :ensure t

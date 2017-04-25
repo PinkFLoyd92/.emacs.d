@@ -7,9 +7,9 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 
 | key         | command                      
 | -----------:| --------------------------
-| SPC-f f=   | helm-find-file                
+| SPC-f f    | helm-find-file                
 | C-c g=     | helm-google-suggest           
-| /          | swiper~                        
+| /          | swiper                        
 | C-o        | evil-execute-in-normal-state   
 | M-1        | windmove-up                    
 | M-2        | windmove-down                  
@@ -19,11 +19,35 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 | SPC-r      | resize-window                  
 | SPC-vb      | point-to-register
 | SPC-vv      | resize-window                  
+| SPC-wwx      | delete-frame                  
+| SPC-wx      | delete-current-window                  
+| SPC-wX      | delete-other-windows           
 
 
 #### AUTO-COMPLETE COMMANDS
 
 | key         | command                      
 | -----------:| --------------------------
-| SPC-vb      | ac-next                      
-| SPC-vv      | ac-previous                  
+| M-j      | ac-next                      
+| M-k      | ac-previous                  
+
+
+#### Emacs Lisp Editing COMMANDS
+
+| key         | command                      
+| -----------:| --------------------------
+| C-x c      | load-ielm                      
+
+
+#### Editing COMMANDS
+
+| key         | command                      
+| -----------:| --------------------------
+| SPC-n h      | Mark function               
+| SPC-b h      | Send function to interpreter       
+| SPC-b r      | Send region to interpreter       
+| SPC-b f      | Send file to interpreter       
+| SPC - .     | Indent to the right       
+| SPC - ,     | Indent to the left       
+| M - n     | Elpy nav down       
+| M - m     | Elpy nav up       
