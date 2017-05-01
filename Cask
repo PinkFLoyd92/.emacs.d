@@ -74,4 +74,6 @@
 (depends-on "ess")
 (depends-on "ng2-mode")
 (depends-on "pug-mode")
+(depends-on "elfeed")
+(depends-on "hydra")
 
