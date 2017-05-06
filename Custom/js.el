@@ -1,4 +1,5 @@
 (require 'auto-complete)
+(require 'company)
 (require 'nodejs-repl)
 (require 'flycheck)
 ;; start yasnippet with emacs
@@ -11,11 +12,11 @@
 
 (add-hook 'js-mode-hook (lambda ()
 			  (tern-mode)
-; do default config for auto-complete
-(require 'auto-complete-config)
-(hs-minor-mode 1)
 (company-mode 0)
-(ac-config-default)))
+(add-to-list 'company-backends 'company-tern)
+; do default config for auto-complete
+(hs-minor-mode 1)
+(auto-complete-mode 1)))
 
 
 ;; customizable...
@@ -27,7 +28,6 @@
     (require 'tern-auto-complete)
     (tern-ac-setup)))
 (add-hook 'js2-mode-hook 'tern-mode)
-
 (add-hook 'js2-mode-hook
           (lambda ()
             (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)

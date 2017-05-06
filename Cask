@@ -77,4 +77,5 @@
 (depends-on "elfeed")
 (depends-on "hydra")
 (depends-on "yaml-mode")
+(depends-on "company-tern")
 
