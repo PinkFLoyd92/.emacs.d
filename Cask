@@ -76,4 +76,5 @@
 (depends-on "pug-mode")
 (depends-on "elfeed")
 (depends-on "hydra")
+(depends-on "yaml-mode")
 

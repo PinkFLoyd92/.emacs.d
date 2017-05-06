@@ -62,6 +62,7 @@
 (load-file "~/.emacs.d/Custom/yas.el")
 (load-file "~/.emacs.d/Custom/elfeed.el")
 (load-file "~/.emacs.d/Custom/hydra.el")
+(load-file "~/.emacs.d/Custom/yaml.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
