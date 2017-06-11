@@ -33,7 +33,14 @@
 				 :prefix "SPC"
 				 :non-normal-prefix "C-SPC"
 				 "br" '(loadEslint :which-key "Eval-eslint")
-	  ))) )
+				 )))
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1)
+  (editorconfig-apply)
+  )
+)
 
 
 ;; customizable...

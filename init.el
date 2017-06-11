@@ -65,6 +65,7 @@
 (load-file "~/.emacs.d/Custom/hydra.el")
 (load-file "~/.emacs.d/Custom/yaml.el")
 (load-file "~/.emacs.d/Custom/stylus.el")
+(load-file "~/.emacs.d/Custom/editorconfig")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

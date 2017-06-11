@@ -79,4 +79,5 @@
 (depends-on "yaml-mode")
 (depends-on "company-tern")
 (depends-on "stylus-mode")
+(depends-on "editorconfig")
 
