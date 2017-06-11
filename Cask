@@ -80,4 +80,10 @@
 (depends-on "company-tern")
 (depends-on "stylus-mode")
 (depends-on "editorconfig")
+(depends-on "irony")
+(depends-on "company-irony")
+(depends-on "company-c-headers")
+(depends-on "flycheck-pkg-config")
+(depends-on "cedet")
+(depends-on "ede")
 
