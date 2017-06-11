@@ -78,4 +78,5 @@
 (depends-on "hydra")
 (depends-on "yaml-mode")
 (depends-on "company-tern")
+(depends-on "stylus-mode")
 

@@ -6,17 +6,34 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;; Custom eslint function
+(defun loadEslint ()
+  "eslint function"
+  (interactive)
+(message (concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name)))
+  (shell-command(concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name))) )
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-hook 'js2-mode-hook 'js2-minor-mode)
 
 (add-hook 'js-mode-hook (lambda ()
 			  (tern-mode)
+
 (company-mode 0)
 (add-to-list 'company-backends 'company-tern)
 ; do default config for auto-complete
 (hs-minor-mode 1)
-(auto-complete-mode 1)))
+(auto-complete-mode 1)
+			      (use-package general :ensure t
+				:config
+				(general-define-key
+				 :states '(normal visual insert emacs)
+				:keymaps 'local
+				 :prefix "SPC"
+				 :non-normal-prefix "C-SPC"
+				 "br" '(loadEslint :which-key "Eval-eslint")
+	  ))) )
 
 
 ;; customizable...

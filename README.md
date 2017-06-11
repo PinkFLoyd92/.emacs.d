@@ -10,7 +10,7 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 | SPC-f f    | helm-find-file                
 | C-c g=     | helm-google-suggest           
 | /          | swiper                        
-| C-o        | evil-execute-in-normal-state   
+| -o        | evil-execute-in-normal-state   
 | M-1        | windmove-up                    
 | M-2        | windmove-down                  
 | M-3        | windmove-right                 
@@ -47,7 +47,7 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 | SPC-b h      | Send function to interpreter       
 | SPC-b r      | Send region to interpreter       
 | SPC-b f      | Send file to interpreter       
-| SPC - .     | Indent to the right       
-| SPC - ,     | Indent to the left       
-| M - n     | Elpy nav down       
-| M - m     | Elpy nav up       
+| SPC - .      | Indent to the right       
+| SPC - ,      | Indent to the left       
+| M - n        | Elpy nav down       
+| M - m        | Elpy nav up       

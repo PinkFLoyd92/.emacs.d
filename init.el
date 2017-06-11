@@ -6,6 +6,7 @@
 (package-initialize)
 
 (require 'cask "~/.cask/cask.el")
+(require 'cl)
 (cask-initialize)
 
 (setq delete-old-versions -1 )		; delete excess backup versions silently
@@ -63,6 +64,7 @@
 (load-file "~/.emacs.d/Custom/elfeed.el")
 (load-file "~/.emacs.d/Custom/hydra.el")
 (load-file "~/.emacs.d/Custom/yaml.el")
+(load-file "~/.emacs.d/Custom/stylus.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
