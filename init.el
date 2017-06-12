@@ -4,7 +4,6 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-
 (require 'cask "~/.cask/cask.el")
 (require 'cl)
 (cask-initialize)
@@ -66,6 +65,8 @@
 (load-file "~/.emacs.d/Custom/yaml.el")
 (load-file "~/.emacs.d/Custom/stylus.el")
 (load-file "~/.emacs.d/Custom/editorconfig.el")
+(load-file "~/.emacs.d/Custom/cmode.el")
+(load-file "~/.emacs.d/Custom/iedit.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

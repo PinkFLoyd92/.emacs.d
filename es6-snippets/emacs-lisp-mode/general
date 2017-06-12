@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: general
+# key: gen
+# --
+(general-define-key
+	:states '(normal visual insert emacs)
+        :prefix "SPC"
+	:non-normal-prefix "C-SPC"
+	"$2" '($1 :which-key "$3")
+				 )

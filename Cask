@@ -86,4 +86,8 @@
 (depends-on "flycheck-pkg-config")
 (depends-on "cedet")
 (depends-on "ede")
+(depends-on "xcscope")
+(depends-on "etags")
+(depends-on "ac-etags")
+(depends-on "iedit")
 

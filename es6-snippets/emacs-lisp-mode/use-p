@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: use-p
+# key: u-p
+# --
+
+(use-package $1 :ensure t
+  :config
+  )
