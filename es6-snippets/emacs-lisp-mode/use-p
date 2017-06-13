@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: use-p
-# key: u-p
+# key: up
 # --
 
 (use-package $1 :ensure t
