@@ -91,6 +91,7 @@
 (load-file "~/.emacs.d/Custom/tabbar.el")
 (load-file "~/.emacs.d/Custom/lsp.el")
 (load-file "~/.emacs.d/Custom/esh-custom.el")
+(load-file "~/.emacs.d/Custom/neotree.el")
 
 (setenv "PATH" (concat (getenv "PATH") "/home/sebas/.config/yarn/global/node_modules/.bin/"))
 (setq exec-path (append exec-path '("/home/sebas/.config/yarn/global/node_modules/.bin/")))

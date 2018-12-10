@@ -13,6 +13,11 @@
   :prefix "C-SPC"
   "/" 'swiper)
 
+(general-define-key
+ :keymaps '(normal insert emacs)
+ :prefix "SPC"
+  "1" 'revert-buffer)
+
 ;; `evil-change' is not bound in `evil-visual-state-map' by default but
 ;; inherited from `evil-normal-state-map'
 ;; if you don't want "c" to be affected in visual state, you should add this
