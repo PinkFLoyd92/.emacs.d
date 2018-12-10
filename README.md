@@ -22,6 +22,7 @@ First at all, install cask, and then just run `cask install` in the emacs folder
 | SPC-wwx      | delete-frame                  
 | SPC-wx      | delete-current-window                  
 | SPC-wX      | delete-other-windows           
+| C-c y      | helm-c-yas
 
 
 #### AUTO-COMPLETE COMMANDS

@@ -1,5 +1,4 @@
-smex-items
 backups/
+elpa/
 auto-save-list/
 .cask/
-*~

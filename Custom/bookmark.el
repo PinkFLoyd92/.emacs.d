@@ -18,4 +18,7 @@
 
   (local-set-key (kbd "7") (lambda () (interactive)
 			     ('jump-to-7th-bookmark)))
+
+  (local-set-key (kbd "8") (lambda () (interactive)
+			     ('jump-to-8th-bookmark)))
   )

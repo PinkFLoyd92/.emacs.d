@@ -1,6 +1,7 @@
 (require 'auto-complete)
 (require 'company)
 (require 'nodejs-repl)
+(require 'jquery-doc)
 (require 'flycheck)
 ;; start yasnippet with emacs
 (require 'yasnippet)
@@ -10,54 +11,79 @@
 (defun loadEslint ()
   "eslint function"
   (interactive)
-(message (concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name)))
-  (shell-command(concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name))) )
+  (message (concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name)))
+  (shell-command(concat flycheck-javascript-eslint-executable " --fix " (buffer-file-name))) )
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js$\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-hook 'js2-mode-hook 'js2-minor-mode)
 
-(add-hook 'js-mode-hook (lambda ()
-			  (tern-mode)
+(add-hook 'js2-mode-hook
+  (lambda ()
+    (setq tern-command '("/usr/bin/tern" "--no-port-file"))
+    (tern-mode)
+    (jquery-doc-setup)
+    (company-mode 0)
+    (add-to-list 'company-backends 'company-tern)
+    (hs-minor-mode 1)
+    (auto-complete-mode)
+    (setq js2-strict-missing-semi-warning nil)
+    (setq js2-missing-semi-one-line-override nil)
+    (js2-minor-mode)
+    (js2-refactor-mode 1)
+    (js2r-add-keybindings-with-prefix "C-c C-m")
+    (setq js2-highlight-level 3) ;;highlighting of many Ecma built-in functions.
+    (setq-default js2-show-parse-errors nil)
+    (use-package general :ensure t
+      :config
+      (general-define-key
+        :states '(normal visual insert emacs)
+        :keymaps 'local
+        :prefix "SPC"
+        :non-normal-prefix "C-SPC"
+        "br" '(loadEslint :which-key "Eval-eslint")
+        )))
 
-(company-mode 0)
-(add-to-list 'company-backends 'company-tern)
-; do default config for auto-complete
-(hs-minor-mode 1)
-(auto-complete-mode 1)
-			      (use-package general :ensure t
-				:config
-				(general-define-key
-				 :states '(normal visual insert emacs)
-				:keymaps 'local
-				 :prefix "SPC"
-				 :non-normal-prefix "C-SPC"
-				 "br" '(loadEslint :which-key "Eval-eslint")
-				 )))
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1)
-  (editorconfig-apply)
+
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1)
+    (editorconfig-apply)
+    )
   )
-)
 
+
+(add-hook 'tern-mode-hook
+  (lambda ()
+    (use-package general :ensure t
+      :config
+      (general-define-key
+        :states '(normal visual insert emacs)
+        :keymaps 'local
+        :prefix "SPC"
+        :non-normal-prefix "C-SPC"
+        "dd" '(tern-get-docs :which-key "Tern Get Docs")
+        "dc" '(tern-get-type :which-key "Tern Get Type")
+        )))
+
+
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1)
+    (editorconfig-apply)
+    )
+  )
 
 ;; customizable...
 
 (if (eq system-type 'windows-nt)
-    (setq tern-command '("node" "<TERN LOCATION>\\bin\\tern")))
+  (setq tern-command '("node" "<TERN LOCATION>\\bin\\tern")))
 (eval-after-load 'tern
-    '(progn
-    (require 'tern-auto-complete)
-    (tern-ac-setup)))
-(add-hook 'js2-mode-hook 'tern-mode)
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
-            (define-key js2-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
-            (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
-            (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
 
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
@@ -81,11 +107,11 @@
 
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/eslint/bin/eslint.js"
-                                        root))))
+                 (or (buffer-file-name) default-directory)
+                 "node_modules"))
+          (eslint (and root
+                    (expand-file-name "node_modules/eslint/bin/eslint.js"
+                      root))))
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
@@ -93,7 +119,7 @@
 ;; adjust indents for web-mode to 2 spaces
 (defun my-web-mode-hook ()
   "Hooks for Web mode. Adjust indents"
-  ;;; http://web-mode.org/
+;;; http://web-mode.org/
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
@@ -104,3 +130,28 @@
     (let ((web-mode-enable-part-face nil))
       ad-do-it)
     ad-do-it))
+
+
+(use-package general
+  :ensure t
+  :init
+  (general-define-key
+    :prefix "SPC"
+    :non-normal-prefix "C-SPC"
+    :states '(normal visual insert emacs)
+    "tt" '((lambda () (interactive) (js2-mode)) :which-key "Activate js2 mode")
+    ))
+
+
+(add-hook 'js2-mode-hook
+  (lambda()
+    (use-package ivy :ensure t
+      :config
+      (general-define-key
+        :states '(normal visual insert emacs)
+        :keymaps 'local
+        :prefix "C-c"
+        "v" '(ivy-push-view :which-key "activate js2 mode")
+        "V" '(ivy-pop-view :which-key "Activate js2 mode")
+        ))
+    ))

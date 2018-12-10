@@ -3,9 +3,9 @@
 ;;(setq general-default-keymaps 'evil-normal-state-map)
 ;; bind j and k in normal state globally
 
-(general-define-key :keymaps 'company-mode-map
-                    "M-j" 'company-select-next
-                    "M-k" 'company-select-previous)
+;; (general-define-key :keymaps 'company-mode-map
+;;                     "M-j" 'company-select-next
+;;                     "M-k" 'company-select-previous)
 
 (use-package general :ensure t
   :config
@@ -25,6 +25,10 @@
    :prefix "SPC"
    :non-normal-prefix "C-SPC"
    :states '(normal visual insert emacs)
+   "gp" '(move-line-up :which-key "Move line up")
+   "gn" '(move-line-down :which-key "Move line down")
+   "gt" '(avy-goto-char-timer :which-key "Avy go to a Word")
+   "gc" '(avy-goto-char-timer :which-key "Avy go to a conditional")
     "s" '(ace-select-window :which-key "Ace Select Window")
     "wv" '(split-window-vertically :which-key "split window right")
     "wh" '(split-window-horizontally :which-key "split window left")
@@ -33,16 +37,10 @@
     "wwx" '(delete-frame :which-key "Delete current frame")
     "wwX" '(delete-other-frames :which-key "Delete other frames")
 ;;    "h" '(shrink-window-horizontally :which-key "Shrink window horizontally")
-    "j" '(shrink-window :which-key "Shrink window vertically")
+    ;; "j" '(shrink-window :which-key "Shrink window vertically")
     "k" '(enlarge-window :which-key "Enlarge window vertically")
     "l" '(enlarge-window-horizontally :which-key "Enlarge window vertically")
     ))
-
-
-  (general-define-key
-   :states '(normal visual emacs)
-    "/" '(swiper :which-key "Search string in buffer...")
-    )
 
 
 (defun evil-sp--add-bindings ()

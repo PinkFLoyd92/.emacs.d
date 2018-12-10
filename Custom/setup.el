@@ -1,4 +1,4 @@
-(use-package company 
+(use-package company
              :ensure t
              :config
              (global-company-mode)
@@ -13,11 +13,13 @@
    :states '(normal visual insert emacs)
    :prefix "SPC"
    :non-normal-prefix "C-SPC"
-    "."   '(company-complete-common :which-key "Complete at point with Company"))
+    "."   '(company-complete-common :which-key "Complete at point with Company")
+    "|"   '(company-select-next :which-key "Complete at point with Company")
+    )
  )
-(use-package undo-tree 
+(use-package undo-tree
              :ensure t
-  :config 
+  :config
 (global-undo-tree-mode))
 
 (use-package ace-jump-mode
@@ -25,12 +27,12 @@
   :config
 
 ;Set up ace-jump-mode
-(autoload 'ace-jump-mode 
-  "ace-jump-mode" 
+(autoload 'ace-jump-mode
+  "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
-(autoload 'ace-jump-mode-pop-mark 
-  "ace-jump-mode" 
+(autoload 'ace-jump-mode-pop-mark
+  "ace-jump-mode"
   "Ace jump back:-"
   t)
   )
