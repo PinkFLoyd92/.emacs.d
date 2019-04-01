@@ -16,6 +16,7 @@
 (general-define-key
  :keymaps '(normal insert emacs)
  :prefix "SPC"
+ :non-normal-prefix "M-SPC"
   "1" 'revert-buffer)
 
 ;; `evil-change' is not bound in `evil-visual-state-map' by default but

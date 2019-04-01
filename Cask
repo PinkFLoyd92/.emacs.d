@@ -118,4 +118,6 @@
 (depends-on "lsp-javascript-typescript") 
 (depends-on "lsp-javascript-flow") 
 (depends-on "lsp-javascript-typescript") 
+(depends-on "lsp-java") 
 (depends-on "yasnippet-snippets") 
+(depends-on "dap-mode") 

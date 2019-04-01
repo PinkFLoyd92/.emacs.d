@@ -29,3 +29,11 @@
 ;;     (add-hook 'js2-mode-hook #'lsp-javascript-typescript-enable) ;; for js2-mode support
 ;;     (add-hook 'rjsx-mode #'lsp-javascript-typescript-enable) ;; for rjsx-mode support
 ;;     )
+
+(use-package lsp-mode :ensure t)
+
+(use-package lsp-ui :ensure t)
+(use-package lsp-java :ensure t :after lsp
+  :config (add-hook 'java-mode-hook 'lsp))
+
+(add-hook 'java-mode-hook #'lsp-java-enable)
