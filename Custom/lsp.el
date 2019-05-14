@@ -1,5 +1,4 @@
 (require 'lsp-mode)
-(require 'lsp-imenu)
 (require 'lsp-ui)
 
 (defun my-company-transformer (candidates)

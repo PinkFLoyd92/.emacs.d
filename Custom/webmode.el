@@ -58,26 +58,51 @@
    "tj" '((lambda () (interactive) (toggle-web-mode)) :which-key "Toggle between web-mode and js2-mode")
    ))
 
-(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")
       (let ((web-mode-enable-part-face nil))
         ad-do-it)
     ad-do-it))
+(require 'flycheck)
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers (append flycheck-disabled-checkers '(javascript-jshint)))
+;; enable flychecking for js-mode
+(add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+;; flycheck eslint for jsx files
+;; (flycheck-define-checker eslint-jsx-checker
+;;   "A JSX syntax and style checker based on ESLint."
 
-(flycheck-define-checker jsxhint-checker
-  "A JSX syntax and style checker based on JSXHint."
+;;   :command ("eslint" source)
+;;   :error-patterns
+;;   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+;;   :modes (web-mode))
 
-  :command ("jsxhint" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
             (when (equal web-mode-content-type "jsx")
               ;; enable flycheck
-              (flycheck-select-checker 'jsxhint-checker)
+              (flycheck-select-checker 'javascript-eslint)
               (flycheck-mode))))
+
+
+
+;; (flycheck-define-checker jsxhint-checker
+;;   "A JSX syntax and style checker based on JSXHint."
+
+;;   :command ("jsxhint" source)
+;;   :error-patterns
+;;   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+;;   :modes (web-mode))
+;; (add-hook 'web-mode-hook
+;;           (lambda ()
+;;             (when (equal web-mode-content-type "jsx")
+;;               ;; enable flycheck
+;;               (flycheck-select-checker 'javascript-eslint)
+;;               (flycheck-mode))))
 
 (general-define-key :states '(normal visual)
                     :keymaps 'web-mode-map

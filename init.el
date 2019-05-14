@@ -122,7 +122,7 @@
  '(lsp-project-whitelist nil)
  '(package-selected-packages
    (quote
-    (ivy-mode c-mode company-irony irony yasnippet which-key web-mode use-package theme-looper switch-window smex smartparens ranger prodigy powerline popwin php-mode pallet nyan-mode neotree myterminal-controls multiple-cursors meta-presenter material-theme magit idle-highlight-mode htmlize helm-projectile general flycheck-cask expand-region exec-path-from-shell evil drag-stuff dired-launch counsel company buffer-move auto-complete ace-window ace-jump-mode)))
+    (ivy-mode c-mode company-irony irony yasnippet which-key web-mode use-package switch-window smex smartparens ranger prodigy powerline popwin php-mode pallet nyan-mode neotree myterminal-controls multiple-cursors meta-presenter material-theme magit idle-highlight-mode htmlize helm-projectile general flycheck-cask expand-region exec-path-from-shell evil drag-stuff dired-launch counsel company buffer-move auto-complete ace-window ace-jump-mode)))
  '(safe-local-variable-values
    (quote
     ((projectile-project-root . "/home/sebas/Projects/reserva.api")

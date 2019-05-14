@@ -3,10 +3,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        evil-delete
         evil-delete-char
+        evil-next-line
+        evil-normal-state
+        evil-paste-after
+        evil-previous-line
+        tern-ac-dot-complete
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        evil-force-normal-state
         iedit-switch-to-mc-mode
         ))
