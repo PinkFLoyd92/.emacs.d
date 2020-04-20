@@ -14,12 +14,32 @@
   (message (concat flycheck-javascript-eslint-executable  " --fix " (buffer-file-name)))
   (shell-command(concat flycheck-javascript-eslint-executable " --fix " (buffer-file-name))) )
 
-(add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))
-;; (add-to-list 'auto-mode-alist '("\\.js$\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . rjsx-mode))
+(add-to-list 'magic-mode-alist '("import React" . rjsx-mode) )
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+(use-package tide
+  :ensure t
+  :after (rjsx-mode company flycheck)
+  :hook (rjsx-mode . setup-tide-mode))
+
+(use-package prettier-js
+  :ensure t
+  :after (rjsx-mode)
+  :hook (rjsx-mode . prettier-js-mode))
 
 (add-hook 'js2-mode-hook
   (lambda ()
+    (nvm-use-for)
     (setq tern-command '("/usr/bin/tern" "--no-port-file"))
     (tern-mode)
     (jquery-doc-setup)
@@ -28,6 +48,7 @@
     (hs-minor-mode 1)
     (auto-complete-mode)
     (setq js2-strict-missing-semi-warning nil)
+    (setq js2-basic-offset 2)
     (setq js2-missing-semi-one-line-override nil)
     (js2-minor-mode)
     (js2-refactor-mode 1)
