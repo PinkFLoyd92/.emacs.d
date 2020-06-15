@@ -40,6 +40,11 @@
   :init
   (setq pipenv-projectile-after-switch-function #'pipenv-projectile-after-switch-extended))
 
+(use-package py-autopep8
+  :ensure t
+  :after (elpy-mode company lycheck)
+  :hook (elpy-mode . py-autopep8-enable-on-save))
+
 ;; anaconda
 (use-package anaconda-mode
   :config

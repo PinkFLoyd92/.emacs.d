@@ -24,8 +24,17 @@
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
   (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
 
 (use-package tide
   :ensure t
@@ -40,11 +49,8 @@
 (add-hook 'js2-mode-hook
   (lambda ()
     (nvm-use-for)
-    (setq tern-command '("/usr/bin/tern" "--no-port-file"))
-    (tern-mode)
-    (jquery-doc-setup)
     (company-mode 0)
-    (add-to-list 'company-backends 'company-tern)
+    ;; (add-to-list 'company-backends )
     (hs-minor-mode 1)
     (auto-complete-mode)
     (setq js2-strict-missing-semi-warning nil)
@@ -74,37 +80,36 @@
     )
   )
 
+;; (add-hook 'tern-mode-hook
+;;   (lambda ()
+;;     (use-package general :ensure t
+;;       :config
+;;       (general-define-key
+;;         :states '(normal visual insert emacs)
+;;         :keymaps 'local
+;;         :prefix "SPC"
+;;         :non-normal-prefix "C-SPC"
+;;         "dd" '(tern-get-docs :which-key "Tern Get Docs")
+;;         "dc" '(tern-get-type :which-key "Tern Get Type")
+;;         )))
 
-(add-hook 'tern-mode-hook
-  (lambda ()
-    (use-package general :ensure t
-      :config
-      (general-define-key
-        :states '(normal visual insert emacs)
-        :keymaps 'local
-        :prefix "SPC"
-        :non-normal-prefix "C-SPC"
-        "dd" '(tern-get-docs :which-key "Tern Get Docs")
-        "dc" '(tern-get-type :which-key "Tern Get Type")
-        )))
 
-
-  (use-package editorconfig
-    :ensure t
-    :config
-    (editorconfig-mode 1)
-    (editorconfig-apply)
-    )
-  )
+;;   (use-package editorconfig
+;;     :ensure t
+;;     :config
+;;     (editorconfig-mode 1)
+;;     (editorconfig-apply)
+;;     )
+;;   )
 
 ;; customizable...
 
-(if (eq system-type 'windows-nt)
-  (setq tern-command '("node" "<TERN LOCATION>\\bin\\tern")))
-(eval-after-load 'tern
-  '(progn
-     (require 'tern-auto-complete)
-     (tern-ac-setup)))
+;; (if (eq system-type 'windows-nt)
+;;   (setq tern-command '("node" "<TERN LOCATION>\\bin\\tern")))
+;; (eval-after-load 'tern
+;;   '(progn
+;;      (require 'tern-auto-complete)
+;;      (tern-ac-setup)))
 
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers

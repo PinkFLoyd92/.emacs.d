@@ -90,10 +90,12 @@
 (load-file "~/.emacs.d/Custom/zoom.el")
 ;; (load-file "~/.emacs.d/Custom/tabbar.el")
 (load-file "~/.emacs.d/Custom/lsp.el")
+(load-file "~/.emacs.d/Custom/dart.el")
 (load-file "~/.emacs.d/Custom/esh-custom.el")
 (load-file "~/.emacs.d/Custom/neotree.el")
 (load-file "~/.emacs.d/Custom/multi-iedit.el")
 (load-file "~/.emacs.d/Custom/snipe.el")
+(load-file "~/.emacs.d/Custom/dumb-jump.el")
 ;;(load-file "~/.emacs.d/Custom/nvm.el")
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v12.8.1/bin")))
 
@@ -126,7 +128,7 @@
  '(lsp-project-whitelist nil)
  '(package-selected-packages
    (quote
-    (prettier-js tide ivy-mode c-mode company-irony irony yasnippet which-key web-mode use-package switch-window smex smartparens ranger prodigy powerline popwin php-mode pallet nyan-mode neotree myterminal-controls multiple-cursors meta-presenter material-theme magit idle-highlight-mode htmlize helm-projectile general flycheck-cask expand-region exec-path-from-shell evil drag-stuff dired-launch counsel company buffer-move auto-complete ace-window ace-jump-mode)))
+    (hover lsp-dart py-autopep8 prettier-js tide ivy-mode c-mode company-irony irony yasnippet which-key web-mode use-package switch-window smex smartparens ranger prodigy powerline popwin php-mode pallet nyan-mode neotree myterminal-controls multiple-cursors meta-presenter material-theme magit idle-highlight-mode htmlize helm-projectile general flycheck-cask expand-region exec-path-from-shell evil drag-stuff dired-launch counsel company buffer-move auto-complete ace-window ace-jump-mode)))
  '(safe-local-variable-values
    (quote
     ((projectile-project-root . "/home/sebas/Projects/reserva.api")

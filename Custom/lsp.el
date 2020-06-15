@@ -1,38 +1,18 @@
-(require 'lsp-mode)
-(require 'lsp-ui)
+(setq lsp-keymap-prefix "s-l")
 
-(defun my-company-transformer (candidates)
-  (let ((completion-ignore-case t))
-    (all-completions (company-grab-symbol) candidates)))
+(use-package lsp-mode
+    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+            (python-mode . lsp)
+            ;; if you want which-key integration
+            (lsp-mode . lsp-enable-which-key-integration))
+    :commands lsp)
 
-(defun my-js-hook nil
-  (make-local-variable 'company-transformers)
-  (push 'my-company-transformer company-transformers))
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+;; if you are helm user
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
-;;(add-hook 'js-mode-hook 'my-js-hook)
-
-;;(add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
-(add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
-
-(defun my-set-projectile-root ()
-  (when lsp--cur-workspace
-    (setq projectile-project-root (lsp--workspace-root lsp--cur-workspace))))
-(add-hook 'lsp-before-open-hook #'my-set-projectile-root)
-
-;; (use-package lsp-javascript-typescript
-;;     :commands (lsp-javascript-typescript-enable)
-;;     :init
-;;     (add-hook 'js-mode-hook #'lsp-javascript-typescript-enable)
-;;     (add-hook 'typescript-mode-hook #'lsp-javascript-typescript-enable) ;; for typescript support
-;;     (add-hook 'js2-mode-hook #'lsp-javascript-typescript-enable) ;; for js2-mode support
-;;     (add-hook 'rjsx-mode #'lsp-javascript-typescript-enable) ;; for rjsx-mode support
-;;     )
-
-(use-package lsp-mode :ensure t)
-
-(use-package lsp-ui :ensure t)
-(use-package lsp-java :ensure t :after lsp
-  :config (add-hook 'java-mode-hook 'lsp))
-
-(add-hook 'java-mode-hook #'lsp-java-enable)
+;; (use-package dap-mode)

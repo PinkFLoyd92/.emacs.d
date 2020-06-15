@@ -3,17 +3,25 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        evil-change
         evil-delete
         evil-delete-char
+        evil-insert
         evil-next-line
         evil-normal-state
         evil-paste-after
         evil-previous-line
+        evil-previous-visual-line
+        evil-substitute
+        helm-M-x
+        helm-confirm-and-exit-minibuffer
         tern-ac-dot-complete
         ))
 
 (setq mc/cmds-to-run-once
       '(
         evil-force-normal-state
+        evil-next-visual-line
         iedit-switch-to-mc-mode
+        sp-backward-delete-char
         ))

@@ -16,3 +16,7 @@ recentf
 recentf.txt
 transient/
 anaconda-mode/
+.cache/
+elpy/
+url/
+.lsp-session-v1

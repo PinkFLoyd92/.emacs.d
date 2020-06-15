@@ -11,6 +11,7 @@
    :prefix "SPC"
    :non-normal-prefix "C-SPC"
    "yy"   '(yas-expand :which-key "Expand the current snippet")
+   "is"   '(yas-insert-snippet :which-key "insert snippet")
    )
 
   )
