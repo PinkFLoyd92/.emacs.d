@@ -20,3 +20,4 @@ anaconda-mode/
 elpy/
 url/
 .lsp-session-v1
+*.log

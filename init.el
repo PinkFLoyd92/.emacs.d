@@ -2,7 +2,6 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
 (require 'cask "/usr/share/cask/cask.el")
 (require 'cl)
 (cask-initialize)
@@ -34,7 +33,7 @@
 (bookmark-bmenu-list)
 ;; (switch-to-buffer "*Bookmark List*")
 (setq custom-safe-themes t)
-(global-vim-empty-lines-mode)
+;;(global-vim-empty-lines-mode)
 (setq browse-url-browser-function 'eww-browse-url)
 (set-face-attribute 'default nil :font "Monaco-10")
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -169,4 +168,5 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq create-lockfiles nil)
 (load-file "~/.emacs.d/flow-for-emacs/flow.el")
