@@ -17,3 +17,7 @@
     "pf"   '(helm-projectile-find-file :which-key "Find file in Project")
     "pg"   '(helm-grep-do-git-grep :which-key "Find file from text using Git")
  ))
+
+(add-to-list 'projectile-globally-ignored-directories "*node_modules")
+(add-to-list 'projectile-globally-ignored-directories "*build")
+(add-to-list 'projectile-globally-ignored-directories "*dist")

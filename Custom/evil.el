@@ -7,6 +7,12 @@
 ;;                     "M-j" 'company-select-next
 ;;                     "M-k" 'company-select-previous)
 
+(use-package evil
+  :ensure t
+  :config
+  (setq evil-want-fine-undo 'fine))
+
+
 (use-package general :ensure t
   :config
   (require 'windmove)

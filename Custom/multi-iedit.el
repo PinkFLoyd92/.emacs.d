@@ -21,6 +21,8 @@
 ;; Restore the last group of multiedit regions.
 (define-key evil-visual-state-map (kbd "C-M-D") 'evil-multiedit-restore)
 
+(define-key evil-visual-state-map (kbd "*") 'evil-multiedit-operator)
+
 ;; RET will toggle the region under the cursor
 (define-key evil-multiedit-state-map (kbd "RET") 'evil-multiedit-toggle-or-restrict-region)
 

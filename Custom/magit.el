@@ -7,10 +7,10 @@
   )
 
 
-(use-package evil-magit
-  :ensure t
-  :config
-  (lambda ()
-     (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward)
-    )
-  )
+;; (use-package evil-magit
+;;   :ensure t
+;;   :config
+;;   (lambda ()
+;;      (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward)
+;;     )
+;;   )

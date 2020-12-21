@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
 
+(depends-on "undo-fu")
+(depends-on "dashboard")
 (depends-on "bind-key")
 (depends-on "cask")
 (depends-on "dash")
@@ -105,7 +107,6 @@
 (depends-on "ruby-electric")
 (depends-on "robe")
 (depends-on "rvm")
-(depends-on "evil-magit")
 (depends-on "evil-collection")
 (depends-on "dashboard")
 (depends-on "zoom")

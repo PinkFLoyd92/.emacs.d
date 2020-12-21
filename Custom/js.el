@@ -17,29 +17,16 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("pages\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("containers\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("hooks\\/.*\\.js\\'" . rjsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . rjsx-mode))
 (add-to-list 'magic-mode-alist '("import React" . rjsx-mode) )
 
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
-
-(use-package tide
-  :ensure t
-  :after (rjsx-mode company flycheck)
-  :hook (rjsx-mode . setup-tide-mode))
 
 (use-package prettier-js
   :ensure t
@@ -169,15 +156,15 @@
     ))
 
 
-(add-hook 'js2-mode-hook
-  (lambda()
-    (use-package ivy :ensure t
-      :config
-      (general-define-key
-        :states '(normal visual insert emacs)
-        :keymaps 'local
-        :prefix "C-c"
-        "v" '(ivy-push-view :which-key "activate js2 mode")
-        "V" '(ivy-pop-view :which-key "Activate js2 mode")
-        ))
-    ))
+;; (add-hook 'js2-mode-hook
+;;   (lambda()
+;;     (use-package ivy :ensure t
+;;       :config
+;;       (general-define-key
+;;         :states '(normal visual insert emacs)
+;;         :keymaps 'local
+;;         :prefix "C-c"
+;;         "v" '(ivy-push-view :which-key "activate js2 mode")
+;;         "V" '(ivy-pop-view :which-key "Activate js2 mode")
+;;         ))
+;;     ))
