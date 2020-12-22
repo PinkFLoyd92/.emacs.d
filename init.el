@@ -43,7 +43,6 @@
 (require 'package)
 (require 'use-package)
 
-(load-file "~/.emacs.d/Custom/undo-fu.el")
 (load-file "~/.emacs.d/Custom/dashboard.el")
 (load-file "~/.emacs.d/Custom/helm.el")
 (load-file "~/.emacs.d/Custom/markdown.el")
@@ -96,6 +95,7 @@
 (load-file "~/.emacs.d/Custom/multi-iedit.el")
 (load-file "~/.emacs.d/Custom/snipe.el")
 (load-file "~/.emacs.d/Custom/dumb-jump.el")
+(load-file "~/.emacs.d/Custom/undo-fu.el")
 ;;(load-file "~/.emacs.d/Custom/nvm.el")
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v12.8.1/bin")))
 

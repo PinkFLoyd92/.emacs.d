@@ -9,10 +9,6 @@
  "j" 'evil-next-visual-line
  "k" 'evil-previous-visual-line)
 
-(general-emacs-define-key 'insert
-  :prefix "C-SPC"
-  "/" 'swiper)
-
 (general-define-key
  :keymaps '(normal insert emacs)
  :prefix "SPC"

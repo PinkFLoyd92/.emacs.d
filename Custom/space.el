@@ -6,9 +6,11 @@
   :config
   (evil-mode 1)
   )
+(global-set-key (kbd "C-k") (lambda () (interactive) (search-forward (car swiper-history))))
+(global-set-key (kbd "C-j") (lambda () (interactive) (search-backward (car swiper-history))))
 (general-define-key
  ;; replace default keybindings
- "C-s" '(swiper :which-key "Search for string in buffer")
+ "/" '(swiper :which-key "Search for string in buffer")
  "M-x" '(helm-M-x :which-key "Helm-M-x")       ; replace default M-x with ivy backend
  )
 

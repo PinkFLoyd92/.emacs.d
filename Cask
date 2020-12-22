@@ -119,6 +119,7 @@
 (depends-on "lsp-dart")
 (depends-on "lsp-treemacs")
 (depends-on "helm-lsp")
+(depends-on "helm-swoop")
 (depends-on "lsp-ivy")
 (depends-on "dap-mode")
 (depends-on "dart-mode")
