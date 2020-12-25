@@ -96,6 +96,7 @@
 (load-file "~/.emacs.d/Custom/snipe.el")
 (load-file "~/.emacs.d/Custom/dumb-jump.el")
 (load-file "~/.emacs.d/Custom/undo-fu.el")
+(load-file "~/.emacs.d/Custom/company.el")
 ;;(load-file "~/.emacs.d/Custom/nvm.el")
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v12.8.1/bin")))
 

@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
 
+(depends-on "prescient")
+(depends-on "company-prescient")
 (depends-on "undo-fu")
 (depends-on "dashboard")
 (depends-on "bind-key")

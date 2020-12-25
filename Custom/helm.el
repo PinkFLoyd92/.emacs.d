@@ -25,7 +25,13 @@
 
 (general-define-key
  :keymaps '(normal insert emacs)
-  "/" 'helm-swoop)
+  )
+
+(general-define-key
+ :keymaps '(normal insert emacs)
+ :prefix "SPC"
+ :non-normal-prefix "M-SPC"
+"/" 'helm-swoop)
 
 (setq helm-swoop-use-fuzzy-match t)
 ;; Use search query at the cursor  (default)
