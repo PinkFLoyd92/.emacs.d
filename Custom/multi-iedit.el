@@ -11,9 +11,10 @@
 ;; Insert marker at point
 (define-key evil-insert-state-map (kbd "M-d") 'evil-multiedit-toggle-marker-here)
 
+(global-unset-key (kbd "M-b"))
 ;; Same as M-d but in reverse.
-(define-key evil-normal-state-map (kbd "M-D") 'evil-multiedit-match-and-prev)
-(define-key evil-visual-state-map (kbd "M-D") 'evil-multiedit-and-prev)
+(define-key evil-normal-state-map (kbd "M-b") 'evil-multiedit-match-and-prev)
+(define-key evil-visual-state-map (kbd "M-b") 'evil-multiedit-and-prev)
 
 ;; OPTIONAL: If you prefer to grab symbols rather than words, use
 ;; `evil-multiedit-match-symbol-and-next` (or prev).
@@ -30,9 +31,9 @@
 (define-key evil-motion-state-map (kbd "RET") 'evil-multiedit-toggle-or-restrict-region)
 
 ;; For moving between edit regions
-(define-key evil-multiedit-state-map (kbd "C-n") 'evil-multiedit-next)
-(define-key evil-multiedit-state-map (kbd "C-p") 'evil-multiedit-prev)
-(define-key evil-multiedit-insert-state-map (kbd "C-n") 'evil-multiedit-next)
+(define-key evil-multiedit-state-map (kbd "C-j") 'evil-multiedit-next)
+(define-key evil-multiedit-state-map (kbd "C-k") 'evil-multiedit-prev)
+(define-key evil-multiedit-insert-state-map (kbd "C-j") 'evil-multiedit-next)
 (define-key evil-multiedit-insert-state-map (kbd "C-p") 'evil-multiedit-prev)
 
 ;; Ex command that allows you to invoke evil-multiedit with a regular expression, e.g.

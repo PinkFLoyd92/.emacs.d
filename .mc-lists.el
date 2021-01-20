@@ -3,9 +3,12 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        evil-backward-char
+        evil-backward-word-begin
         evil-change
         evil-delete
         evil-delete-char
+        evil-forward-char
         evil-insert
         evil-next-line
         evil-normal-state
@@ -21,7 +24,9 @@
 (setq mc/cmds-to-run-once
       '(
         evil-force-normal-state
+        evil-insert-line
         evil-next-visual-line
         iedit-switch-to-mc-mode
         sp-backward-delete-char
+        undo-fu-only-undo
         ))

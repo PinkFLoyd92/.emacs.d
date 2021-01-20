@@ -36,10 +36,11 @@
 (add-hook 'js2-mode-hook
   (lambda ()
     (nvm-use-for)
-    (company-mode 0)
+    (auto-complete-mode -1)
+    (company-mode 1)
     ;; (add-to-list 'company-backends )
     (hs-minor-mode 1)
-    (auto-complete-mode)
+    ;; (auto-complete-mode)
     (setq js2-strict-missing-semi-warning nil)
     (setq js2-basic-offset 2)
     (setq js2-missing-semi-one-line-override nil)

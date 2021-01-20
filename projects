@@ -1,0 +1,4 @@
+;;; -*- lisp-data -*-
+(("~/Projects/sigat-orodelti/")
+ ("~/Projects/climat-frontend/")
+ ("~/Projects/reservaos-api/"))

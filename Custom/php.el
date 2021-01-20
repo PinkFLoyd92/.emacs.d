@@ -18,8 +18,8 @@
 			   (yas-global-mode 1)
 			   (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
 			   (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-			   (company-mode 0)
-			   (auto-complete-mode)
+			   (company-mode 1)
+			   (auto-complete-mode -1)
 (require 'php-auto-yasnippets)
 (require 'general)
 (general-define-key

@@ -97,11 +97,12 @@
 (load-file "~/.emacs.d/Custom/dumb-jump.el")
 (load-file "~/.emacs.d/Custom/undo-fu.el")
 (load-file "~/.emacs.d/Custom/company.el")
+(load-file "~/.emacs.d/Custom/typescript.el")
 ;;(load-file "~/.emacs.d/Custom/nvm.el")
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v12.8.1/bin")))
 
 (setenv "PATH" (concat (getenv "PATH") "/home/sebas/.config/yarn/global/node_modules/.bin/"))
-(setq exec-path (append exec-path '("/home/sebas/.config/yarn/global/node_modules/.bin/")))
+(setq exec-path (append exec-path '("/home/sebas/.config/yarn/global/node_modules/.bin/" "~/.local/bin/")))
 
 (require 'ansi-color)
 (defun display-ansi-colors ()

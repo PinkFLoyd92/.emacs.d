@@ -3,3 +3,9 @@ ls
 rails console
  ~/Projects/gtsi/canvas-CTI/canvas   display_materials_ui   17:45   14
 as
+pwd
+ls
+nvm use
+nvm use
+test
+exit

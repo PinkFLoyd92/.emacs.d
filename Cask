@@ -18,6 +18,7 @@
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
 (depends-on "magit")
+(depends-on "evil-magit")
 (depends-on "multiple-cursors")
 (depends-on "pallet")
 (depends-on "popwin")
